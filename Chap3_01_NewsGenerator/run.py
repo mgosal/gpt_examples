@@ -1,10 +1,11 @@
 from typing import List
 from openai import OpenAI
-from dotenv import load_dotenv
 
-load_dotenv()
 
-client = OpenAI()
+client = OpenAI(
+        base_url='http://localhost:11434/v1/',
+        api_key='ollama',  # required but ignored
+    )
 
 
 def ask_chatgpt(messages):
